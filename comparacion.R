@@ -65,6 +65,7 @@ median(mRNA$Length)
 # Se calcula la media y la mediana del contenido GC de los lncRNAs
 mean(lncRNA$GC)
 median(lncRNA$GC)
+
 # Se calcula la media y la mediana del contenido GC de los mRNAs
 mean(mRNA$GC)
 median(mRNA$GC)
