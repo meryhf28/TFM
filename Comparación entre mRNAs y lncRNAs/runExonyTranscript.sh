@@ -34,8 +34,3 @@ do
   grep '$i' ${D}/comparacion/exones_${sample} | wc -l
 
 done
-
-
-
-
-
