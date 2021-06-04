@@ -9,7 +9,7 @@ FEELnc=/Desktop/ArchivosRNAseq/software/feelnc_install_dir
 
 ${FEELnc}/FEELnc_filter.pl -i ${D}/assembly/all.gtf -a ${REFgff} > all_candidates.gtf 
 		  
-# Modificación del transcriptoma de referencia: Se cambias las ‘x’ como nucleótido por ‘n’.
+# Modificación del transcriptoma de referencia: Se cambian las ‘x’ como nucleótido por ‘n’.
 awk '$0 ~ "^>" {print $0}; $0 !~ "^>" {print gensub(/x/,"N","G")}' ${REF} > ${D}/reference/res.fasta
 
 # FEELnc_codpot.pl
