@@ -33,7 +33,7 @@ rm {D}/fasta/desc_seq.tmp {D}/fasta/sequence.tmp {D}/fasta/description.tmp {D}/f
 rm {D}/fasta/mstrg_id.txt {D}/fasta/unigene_names.txt 
 rm {D}/fasta/rigth.tmp {D}/fasta/left.tmp
 
-# Se obtiene el fichero lncRNA_longest.fasta:
+# Se obtiene el fichero lncRNA_longest.fasta con el transcrito más largo para cada gen:
 bioawk -c fastx '{print ">" $name "\t" $seq "\t" length($seq)}' {D}/fasta/lncRNA.fasta | sort -k1b,1 > {D}/fasta/seqs.sorted 
 cut -f 1 -d " " {D}/fasta/seqs.sorted | cut -d "." -f 1,2 > {D}/fasta/gene_id.txt 
 paste {D}/fasta/seqs.sorted {D}/fasta/gene_id.txt | sort -k4b,4 -k3nr,3 | uniq -f 3 | sort -k4V,4 | awk '{print $4 "\n" $2}' | cut -d '_' -f 1,2,3 > {D}/fasta/lncRNA_longest.fasta 
