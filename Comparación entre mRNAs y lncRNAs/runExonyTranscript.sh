@@ -6,7 +6,7 @@ list='lncRNA mRNA'
 for sample in ${list}
 do
 	
-  grep '"1"' ${D}/comparacion/candidates_{$sample}_todos.gtf|cut -f9|cut -d';' -f1|sort|uniq -c|grep -v '1' > ${D}/comparacion/isoformas_${sample}
+  grep '"1"' ${D}/comparacion/candidates_{$sample}_todos.gtf | cut -f9 | cut -d';' -f1 | sort | uniq -c | grep -v '1' > ${D}/comparacion/isoformas_${sample}
   awk '{print $1}' ${D}/comparacion/isoformas_${sample} > ${D}/comparacion/numero_isoformas_${sample}
 
 done
@@ -23,7 +23,7 @@ done
 for sample in ${list}
 do
 
-  cut -f9 ${D}/comparacion/candidates_${sample}_todos.gtf|cut -d';' -f2|sort|uniq -c > ${D}/comparacion/exones_${sample}_transcritos
+  cut -f9 ${D}/comparacion/candidates_${sample}_todos.gtf | cut -d';' -f2 | sort | uniq -c > ${D}/comparacion/exones_${sample}_transcritos
   awk '{print $1}' ${D}/comparacion/exones_${sample}_transcritos > ${D}/comparacion/ exones_${sample}
 
 done
