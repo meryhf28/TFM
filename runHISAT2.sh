@@ -1,4 +1,4 @@
-
+#HISAT2
 
 D=/Desktop/ArchivosRNAseq
 hisat2=/Desktop/ArchivosRNAseq/software/hisat2-2.1.0
