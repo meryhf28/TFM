@@ -192,10 +192,8 @@ ggplot(datos1, aes(x = x, y = y)) +
 }
 
 # Volcano plot de los genes y los genes lncRNAs diferencialmente expresados sin aplicar ningún criterio
-DEG_Volcano_plot(DEG,DEG$logFC,
-                 -1*log10(DEG$FDR), 5)
-DEG_Volcano_plot(coincidencia,coincidencia$logFC,
-                 -1*log10(coincidencia$FDR), 5)
+DEG_Volcano_plot(DEG,DEG$logFC,-1*log10(DEG$FDR), 5)
+DEG_Volcano_plot(coincidencia,coincidencia$logFC,-1*log10(coincidencia$FDR), 5)
 
 # Se filtra en base a los siguientes criterios: FDR < 0.5 y |logFC|>2 para obtener el listado de lncRNAs diferencialmente expresados
 coincidencia <- subset(coincidencia,coincidencia$FDR < 0.5 & abs(coincidencia$logFC)>2)
