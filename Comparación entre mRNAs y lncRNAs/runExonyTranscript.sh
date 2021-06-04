@@ -20,6 +20,7 @@ done
 
 
 # Número de exones por transcrito
+
 for sample in ${list}
 do
 
