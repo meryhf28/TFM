@@ -11,9 +11,9 @@ ${hisat2}/hisat2-build ${REF} ${REF}
 for sample in ${list}
 do
 
-  ${hisat2}/hisat2 -p 3 --dta -x ${REF} -1 ${D}/reads/${sample}_1.fast1 -2 ${D}/reads/${sample}_2.fastq -S ${sample}.sam
+	${hisat2}/hisat2 -p 3 --dta -x ${REF} -1 ${D}/reads/${sample}_1.fast1 -2 ${D}/reads/${sample}_2.fastq -S ${sample}.sam
 	
-  samtools sort -@ 4 -o ${sample}.bam ${sample}.sam
+	samtools sort -@ 4 -o ${sample}.bam ${sample}.sam
 	
 done
 	
